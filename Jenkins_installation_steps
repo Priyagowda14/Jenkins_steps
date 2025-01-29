@@ -1,0 +1,53 @@
+**************steps to install Jenkins on Ubuntu*******************
+
+**Step 1: Update System Packages**
+                    command :- sudo apt update && sudo apt upgrade -y
+
+**Step 2: Install Java (Jenkins Dependency)**
+   Jenkins requires Java. Install OpenJDK:
+                    command :- sudo apt install fontconfig openjdk-17-jre -y
+
+** Java installation:
+                   command :- java -version
+
+**Step 3: Add Jenkins Repository**
+
+                   command :- wget -O - https://pkg.jenkins.io/debian/jenkins.io-2023.key | sudo tee \
+                                /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+
+                    command :- echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+                                 https://pkg.jenkins.io/debian binary/" | sudo tee \
+                                 /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+ **Step 4: Install Jenkins**
+
+                     command :- sudo apt update
+                     command :- sudo apt install jenkins -y
+
+
+**Step 5: Start and Enable Jenkins**
+
+                     command :- sudo systemctl enable --now jenkins
+
+   **Check status:
+
+            command :- sudo systemctl status jenkins
+
+
+ **Step 6: Configure Firewall (if UFW is enabled)**
+
+           sudo ufw allow 8080
+            sudo ufw allow OpenSSH
+            sudo ufw enable
+
+
+ **Step 7: Access Jenkins Web Interface**
+            Open your browser and go to:
+
+          http://your-server-ip:8080
+  
+** Retrieve the initial admin password:
+                command :- sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+{Enter the password and follow the setup instructions.}
+
