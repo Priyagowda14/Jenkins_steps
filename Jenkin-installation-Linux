@@ -1,0 +1,19 @@
+*****jenkins instalation steps in linux****
+
+
+=  dnf update -y
+=  dnf install java-17-amazon-corretto -y
+=  java --version
+=  sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+
+=  sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+    sudo yum upgrade
+=  dnf install jenkins -y
+=  systemctl start jenkins
+=  systemctl enable jenkins
+=   systemctl status jenkins
+
+open new chrome tabe enter public id:8080 (port)
+
+sudo cat /var/lib/jenkines/secrect/
