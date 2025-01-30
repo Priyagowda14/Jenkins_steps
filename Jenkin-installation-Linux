@@ -16,4 +16,13 @@
 
 open new chrome tabe enter public id:8080 (port)
 
-sudo cat /var/lib/jenkines/secrect/
+
+ Access Jenkins Web Interface**
+            Open your browser and go to:
+
+          http://your-server-ip:8080
+  
+** Retrieve the initial admin password:
+                command :- sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+{Enter the password and follow the setup instructions.}
